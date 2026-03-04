@@ -1,0 +1,12 @@
+{
+  "testEnvironment": "jsdom",
+  "setupFilesAfterFramework": ["@testing-library/jest-dom"],
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
+    "\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/__mocks__/fileMock.js"
+  },
+  "testPathPattern": ".*\\.test\\.(js|jsx)$",
+  "transform": {
+    "^.+\\.(js|jsx)$": ["babel-jest", { "presets": ["next/babel"] }]
+  }
+}

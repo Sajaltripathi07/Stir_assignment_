@@ -1,0 +1,115 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.filmReel {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.reelOuter {
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--border);
+  border-radius: 50%;
+  position: relative;
+  animation: spin 3s linear infinite;
+  border-top-color: var(--accent);
+}
+
+.reelInner {
+  position: absolute;
+  inset: 12px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+}
+
+.reelHole {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: rotate(calc(var(--i) * 45deg)) translateX(24px) translateY(-4px);
+  opacity: 0.5;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 280px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  animation: slideIn var(--delay) ease both;
+  animation-delay: var(--delay);
+}
+
+.stepIcon {
+  color: var(--accent);
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.stepLabel {
+  flex: 1;
+}
+
+.stepDots {
+  display: flex;
+  gap: 3px;
+}
+
+.stepDots span {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.stepDots span:nth-child(2) { animation-delay: 0.2s; }
+.stepDots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}

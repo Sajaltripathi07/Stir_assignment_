@@ -1,0 +1,34 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2rem;
+  border: 1px solid;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  width: fit-content;
+}
+
+.icon {
+  font-size: 0.6rem;
+}
+
+.positive {
+  background: var(--positive-bg);
+  border-color: var(--positive);
+  color: var(--positive);
+}
+
+.mixed {
+  background: var(--mixed-bg);
+  border-color: var(--mixed);
+  color: var(--mixed);
+}
+
+.negative {
+  background: var(--negative-bg);
+  border-color: var(--negative);
+  color: var(--negative);
+}
