@@ -10,22 +10,13 @@ import movieRoutes from './routes/movies.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Explicitly point to backend root .env (fixes ES module path issues)
 dotenv.config({ path: join(__dirname, '../.env') });
-
-// Debug: confirm keys are loaded
-console.log('OMDB KEY loaded:', process.env.OMDB_API_KEY ? '✅ YES' : '❌ MISSING');
-console.log('ANTHROPIC KEY loaded:', process.env.ANTHROPIC_API_KEY ? '✅ YES' : '❌ MISSING');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(helmet());
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-}));
+app.use(cors());
 app.use(express.json());
 
 const limiter = rateLimit({
