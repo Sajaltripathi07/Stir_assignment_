@@ -42,55 +42,8 @@
 
 ---
 
-## Project Structure
 
-```
-ai-movie-insight/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   │   └── movieController.js
-│   │   ├── middleware/
-│   │   │   └── validation.js
-│   │   ├── routes/
-│   │   │   └── movies.js
-│   │   ├── services/
-│   │   │   ├── aiService.js
-│   │   │   └── omdbService.js
-│   │   └── index.js
-│   ├── tests/
-│   │   └── validation.test.js
-│   ├── .env.example
-│   ├── jest.config.json
-│   └── package.json
-│
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── CastList.jsx
-    │   │   ├── ErrorState.jsx
-    │   │   ├── InsightPanel.jsx
-    │   │   ├── LoadingState.jsx
-    │   │   ├── MovieCard.jsx
-    │   │   ├── SearchBar.jsx
-    │   │   ├── SentimentBadge.jsx
-    │   │   └── SentimentMeter.jsx
-    │   ├── lib/
-    │   │   ├── api.js
-    │   │   └── validation.js
-    │   ├── pages/
-    │   │   ├── _app.jsx
-    │   │   ├── _document.jsx
-    │   │   └── index.jsx
-    │   └── styles/
-    │       ├── globals.css
-    │       └── *.module.css
-    ├── tests/
-    │   └── validation.test.js
-    ├── .env.example
-    ├── jest.config.json
-    ├── next.config.mjs
-    └── package.json
+  
 ```
 
 ---
@@ -218,28 +171,6 @@ GET /api/movies/tt0133093
   }
 }
 ```
-
-**Error responses:**
-- `400` — Invalid IMDb ID format
-- `404` — Movie not found
-- `429` — Rate limit exceeded
-- `500` — Server error
-
----
-
-## Deployment
-
-### Frontend → Vercel
-
-1. Push the `frontend/` folder to GitHub
-2. Import on [vercel.com](https://vercel.com)
-3. Set environment variable: `NEXT_PUBLIC_API_URL=https://your-backend-url`
-
-### Backend → Railway / Render / Heroku
-
-1. Push the `backend/` folder to GitHub
-2. Create a new service and connect the repo
-3. Set environment variables: `OMDB_API_KEY`, `ANTHROPIC_API_KEY`, `FRONTEND_URL`
 
 ---
 
